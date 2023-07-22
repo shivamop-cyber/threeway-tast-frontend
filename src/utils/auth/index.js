@@ -1,6 +1,6 @@
 export const logout = () => {
-  console.log('Logging out');
   localStorage.removeItem('authToken');
+  localStorage.removeItem('userType');
 };
 
 export const login = (token) => {
@@ -13,4 +13,12 @@ export const isLoggedIn = () => {
 
 export const getToken = () => {
   return localStorage.getItem('authToken');
+};
+
+export const setUserType = (userType) => {
+  localStorage.setItem('userType', userType);
+};
+
+export const getUserType = () => {
+  return localStorage.getItem('userType');
 };

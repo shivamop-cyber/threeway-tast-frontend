@@ -115,7 +115,7 @@ const OrderForm = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <InputLabel htmlFor='outlined-transporter-native-simple'>
-                    Transporter
+                    Transporter *
                   </InputLabel>
                   <Select
                     defaultValue={transporters[0]._id}

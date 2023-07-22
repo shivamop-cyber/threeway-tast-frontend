@@ -8,3 +8,13 @@
     max-width: 60%;
     padding: 10px 10px;
 }
+
+.priceBox {
+    display: flex;
+    justify-content: center;
+}
+
+.innerPriceContainer {
+    display: flex;
+    justify-content: center;
+}

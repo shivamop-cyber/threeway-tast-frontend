@@ -7,6 +7,10 @@ import Error from './pages/Error';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Manufacturer from './pages/Manufacturer';
+import { getUserType } from './utils/auth';
+import { USER_TYPE } from './utils/constants';
+import Transporter from './pages/Transporter';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -14,7 +18,19 @@ function App() {
       <Navbar />
       <AnimatePresence>
         <Routes>
-          <Route exact path='/' element={<Manufacturer />} />
+          <Route
+            exact
+            path='/'
+            element={
+              getUserType() === USER_TYPE.MANUFACTURER ? (
+                <Manufacturer />
+              ) : (
+                <Transporter />
+              )
+            }
+          />
+
+          <Route exact path='/chat/:orderId' element={<Chat />} />
 
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />

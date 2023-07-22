@@ -3,3 +3,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+}
+
+.innerSearchContainer {
+    display: flex;
+    justify-content: center;
+}
