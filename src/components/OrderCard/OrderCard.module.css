@@ -1,0 +1,10 @@
+.orderItem {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.iconButton {
+    max-width: 60%;
+    padding: 10px 10px;
+}

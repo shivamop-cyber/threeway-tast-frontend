@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import Error from './pages/Error';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
+import Manufacturer from './pages/Manufacturer';
 
 function App() {
   return (
@@ -13,8 +14,7 @@ function App() {
       <Navbar />
       <AnimatePresence>
         <Routes>
-          {/* <Route exact path='/' element={<Home />} />
-          <Route exact path='/reviewer/:confId' element={<Reviewer />} /> */}
+          <Route exact path='/' element={<Manufacturer />} />
 
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />

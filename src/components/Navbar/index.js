@@ -14,11 +14,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-
-import { ListItemIcon, Avatar, Grid } from '@mui/material';
-import CampaignIcon from '@mui/icons-material/Campaign';
-import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
@@ -29,25 +24,7 @@ import { isLoggedIn, logout } from '../../utils/auth';
 
 const drawerWidth = 240;
 const navItems = [
-  { name: 'Home', route: '/', icon: <HomeOutlinedIcon />, requiredAuth: false },
-  {
-    name: 'Call for Paper',
-    route: '/cfp',
-    icon: <CampaignIcon />,
-    requiredAuth: true,
-  },
-  {
-    name: 'AllConferences',
-    route: '/allconferences',
-    icon: <MenuBookOutlinedIcon />,
-    requiredAuth: false,
-  },
-  {
-    name: 'Profile',
-    route: '/userprofile',
-    icon: <AccountCircleOutlinedIcon />,
-    requiredAuth: true,
-  },
+  { name: 'Home', route: '/', icon: <HomeOutlinedIcon />, requiredAuth: true },
   {
     name: 'Logout',
     route: '/login',

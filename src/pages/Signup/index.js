@@ -3,8 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import { InputLabel, MenuItem, Select } from '@mui/material';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -18,6 +17,7 @@ import { urlMap } from '../../utils/url';
 import CollapsibleMessage, {
   MessageSeverity,
 } from '../../components/CollapsibleMessage';
+import { USER_TYPE } from '../../utils/constants';
 
 function Copyright(props) {
   return (
@@ -29,7 +29,7 @@ function Copyright(props) {
     >
       {'Copyright © '}
       <Link color='inherit' href='#'>
-      Shipment Dashboard
+        Shipment Dashboard
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -41,6 +41,7 @@ const theme = createTheme();
 
 export default function SignUp() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [filterValue, setFilterValue] = React.useState('All');
   const [isCollapsibleOpen, setIsCollapsibleOpen] = React.useState(false);
   const [collapsibleProperties, setCollapsibleProperties] = React.useState({
     severity: MessageSeverity.info,
@@ -57,7 +58,8 @@ export default function SignUp() {
       name: `${data.get('firstName')} ${data.get('lastName')}`,
       email: data.get('email'),
       password: data.get('password'),
-      affiliation: data.get('Organization'),
+      address: data.get('address'),
+      userType: data.get('userType'),
     });
     setIsModalOpen(false);
     setCollapsibleProperties({
@@ -68,6 +70,11 @@ export default function SignUp() {
       message: responseData.message,
     });
     setIsCollapsibleOpen(true);
+  };
+
+  const handleFilterChange = (event) => {
+    const val = event.target.value;
+    setFilterValue(val);
   };
 
   return isModalOpen ? (
@@ -155,10 +162,28 @@ export default function SignUp() {
                   <TextField
                     required
                     fullWidth
-                    name='Organization'
-                    label='Affiliation/Organization Name'
-                    id='OrgName'
+                    name='address'
+                    label='Address'
+                    id='address'
                   />
+                </Grid>
+                <Grid item xs={12}>
+                  <InputLabel htmlFor='outlined-transporter-native-simple'>
+                    Register as
+                  </InputLabel>
+                  <Select
+                    defaultValue={USER_TYPE.MANUFACTURER}
+                    style={{ minWidth: 250 }}
+                    name='userType'
+                    id='outlined-transporter-native-simple'
+                  >
+                    <MenuItem value={USER_TYPE.MANUFACTURER}>
+                      {USER_TYPE.MANUFACTURER}
+                    </MenuItem>
+                    <MenuItem value={USER_TYPE.TRANSPORTER}>
+                      {USER_TYPE.TRANSPORTER}
+                    </MenuItem>
+                  </Select>
                 </Grid>
               </Grid>
               <Button
