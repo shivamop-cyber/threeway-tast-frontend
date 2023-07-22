@@ -72,11 +72,6 @@ export default function SignUp() {
     setIsCollapsibleOpen(true);
   };
 
-  const handleFilterChange = (event) => {
-    const val = event.target.value;
-    setFilterValue(val);
-  };
-
   return isModalOpen ? (
     <LoadingModal open={isModalOpen} message={'Signing up.....'} />
   ) : (

@@ -9,4 +9,5 @@ export const urlMap = {
   getTransporters: `${userUrl}/transporters/all`,
   createOrder: `${orderUrl}/create`,
   setPrice: `${orderUrl}/price/set`,
+  getOrderMessages: `${orderUrl}/messages`,
 };
