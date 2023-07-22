@@ -1,0 +1,9 @@
+.logo {
+    cursor: pointer;
+    height: 45px !important;
+    border-radius:0 !important;
+}
+
+.header {
+    background-color: #101d2c !important;
+}
