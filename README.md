@@ -4,6 +4,8 @@
 
 Replace the backend url in `utils/url/index.js` file with your own url (e.g. `https://localhost:4500` for the backend running on the local machine)
 
+Run `npm install` to install the dependencies
+
 ## Available Scripts
 
 In the project directory, you can run:
