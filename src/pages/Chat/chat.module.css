@@ -1,6 +1,38 @@
 .chatContainer {
     min-height: 100vh;
+    width: 60vw;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    padding-top: 10vh;
+}
+
+.innerChatContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.orderCardContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+}
+
+.innerSearchContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.selfChat {
+    align-self: flex-end;
+}
+
+.otherChat {
+    align-self: flex-start;
 }
