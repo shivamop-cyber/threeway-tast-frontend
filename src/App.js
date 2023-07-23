@@ -22,10 +22,10 @@ function App() {
             exact
             path='/'
             element={
-              getUserType() === USER_TYPE.MANUFACTURER ? (
-                <Manufacturer />
-              ) : (
+              getUserType() === USER_TYPE.TRANSPORTER ? (
                 <Transporter />
+              ) : (
+                <Manufacturer />
               )
             }
           />
