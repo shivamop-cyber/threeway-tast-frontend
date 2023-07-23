@@ -16,9 +16,9 @@ import {
   Typography,
 } from '@mui/material';
 import { getData } from './../../utils/axios/index';
-import { urlMap } from '../../utils/url';
+import { BACKEND_URL, urlMap } from '../../utils/url';
 
-const socket = io('http://localhost:4500');
+const socket = io(BACKEND_URL);
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

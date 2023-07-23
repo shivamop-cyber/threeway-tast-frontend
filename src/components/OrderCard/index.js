@@ -49,7 +49,7 @@ const OrderCard = ({
           <div>{to}</div>
           <div>{quantity}</div>
           {getUserType() === USER_TYPE.MANUFACTURER ? (
-            <div>{price}</div>
+            <div>{price !== undefined ? price : 'Not proposed yet'}</div>
           ) : (
             <Box
               component='form'

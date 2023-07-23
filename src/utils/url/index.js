@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:4500';
+export const BACKEND_URL = 'https://threewaytask.onrender.com';
 const userUrl = `${BACKEND_URL}/api/v1/user`;
 const orderUrl = `${BACKEND_URL}/api/v1/order`;
 
