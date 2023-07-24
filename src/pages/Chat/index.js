@@ -18,8 +18,6 @@ import {
 import { getData } from './../../utils/axios/index';
 import { BACKEND_URL, urlMap } from '../../utils/url';
 
-const socket = io(BACKEND_URL);
-
 const StyledPaper = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -49,7 +47,8 @@ const ChatMessage = ({ message, avatarTitle }) => {
   );
 };
 
-const Chat = () => {
+const Chat = ({ isSockedConnnected, setIsSocketConnected }) => {
+  const socket = io(BACKEND_URL);
   const [message, setMessage] = useState('');
   const [chatMessages, setChatMessages] = useState([]);
   const navigate = useNavigate();
@@ -67,6 +66,7 @@ const Chat = () => {
 
     socket.on('connect', () => {
       socket.emit('join order', orderId);
+      setIsSocketConnected(true);
     });
 
     return () => {
